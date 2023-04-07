@@ -3,7 +3,6 @@ import express from "express";
 
 require('dotenv').config()
 
-const PORT = process.env.PORT ? +process.env.PORT : 7000
 const route = express()
 
 route.use(express.json())

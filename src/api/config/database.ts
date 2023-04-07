@@ -3,7 +3,7 @@ let database: Database;
 
 const connection = (): Promise<void> => {
     return new Promise((resolve) => {
-        database = new SQLiteDatabase('kwiz.db');
+        database = new SQLiteDatabase('leboncwoin.db');
         loadDatabase(database);
         return resolve();
     });
@@ -11,27 +11,18 @@ const connection = (): Promise<void> => {
 
 const loadDatabase = (database: Database): void => {
     database.prepare(
-        `CREATE TABLE IF NOT EXISTS kwizs
-         (
-             id INTEGER PRIMARY KEY AUTOINCREMENT,
-             title VARCHAR NOT NULL
-         )`
-    ).run();
-    database.prepare(
-        `CREATE TABLE IF NOT EXISTS questions (
+        `CREATE TABLE IF NOT EXISTS users (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            kwizId INTEGER NOT NULL,
-            question VARCHAR NOT NULL,
-            FOREIGN KEY (kwizId) REFERENCES kwizs(id)
-            )`).run();
+            identifiant VarChar2(255) NOT NULL)`).run()
+
     database.prepare(
-        `CREATE TABLE IF NOT EXISTS responses (
+        `CREATE TABLE IF NOT EXISTS annonces (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            questionId INTEGER NOT NULL,
-            response VARCHAR NOT NULL,
-            correct BOOLEAN NOT NULL,
-            FOREIGN KEY (questionId) REFERENCES questions(id)
-            )`).run();
+            titre VarChar2(255) NOT NULL,
+            description VarChar2(255) NOT NULL,
+            prix INTEGER NOT NULL,
+            id_user INTEGER NOT NULL,
+            FOREIGN KEY (id_user) REFERENCES users(id))`).run()
 }
 
 export { connection, database}

@@ -1,7 +1,7 @@
 import express from 'express';
-import kwizs from './routes/kwizs'
+import annonce from './routes/annonce'
 
 const router = express.Router();
-router.use('/kwizs', kwizs);
+router.use('/annonces', annonce);
 
 export default router;
