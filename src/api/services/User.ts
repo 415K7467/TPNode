@@ -6,7 +6,7 @@ export namespace UserService {
         return UserHelper.getAllUser();
     }
 
-    export const createUser = (title: string): void => {
-        UserHelper.createUser(title);
+    export const createUser = (identifiant: string): void => {
+        UserHelper.createUser(identifiant);
     }
 }
