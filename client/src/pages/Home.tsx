@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
+import '../styles/TitleResearchBar.css';
 
 import MyAnnonces from '../pages/Home/MyAnnonces';
 import Annonces from '../pages/Home/Annonces';
 import Profile from '../pages/Home/Profile';
+import UnderHeader from "../components/TitleResearchBar";
 
 const App = () => {
 

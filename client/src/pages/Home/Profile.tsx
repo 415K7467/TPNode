@@ -10,7 +10,7 @@ export default function Profile() {
     }
 
     return (
-        <div>
+        <>
             <h1>{userName}</h1>
             <div>
                 <span>
@@ -34,6 +34,6 @@ export default function Profile() {
                     <p>Valider</p>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
