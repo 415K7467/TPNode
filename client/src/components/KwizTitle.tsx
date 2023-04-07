@@ -23,17 +23,13 @@ export default function KwizTitle() {
     }, []);
 
     return (
-        <div className="content">
-            <ul>
-                {kwizs.map((kwiz) => (
-                    <li>
-                        <h2>{kwiz.title}</h2>
-                        <p>{kwiz.questions.length}</p>
-                    </li>
-                ))}
-            </ul>
-
-
-        </div>
+        <ul>
+            {kwizs.map((kwiz) => (
+                <li>
+                    <h2>{kwiz.title}</h2>
+                    <p>{kwiz.questions.length}</p>
+                </li>
+            ))}
+        </ul>
     );
 }
