@@ -6,8 +6,8 @@ export namespace UserHelper {
         return database.prepare('SELECT * FROM user').all();
     }
 
-    export const createUser = (title: string): void => {
-        database.prepare('INSERT INTO user (identifier) VALUES (?)').run(title);
+    export const createUser = (identifier: string): void => {
+        database.prepare('INSERT INTO user (identifier) VALUES (?)').run(identifier);
     }
 
 }

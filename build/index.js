@@ -30,12 +30,22 @@ const express = require("express");
 const path = __importStar(require("path"));
 const api_1 = __importDefault(require("./api"));
 const database_1 = require("./api/config/database");
+const User_1 = require("./api/services/User");
 const PORT = process.env.PORT ? +process.env.PORT : 7000;
 const app = express();
 app.use(express.json());
 app.use('/api', api_1.default);
 (0, database_1.connection)()
     .then(() => {
+    app.get('/users', (_, res) => {
+        const users = User_1.UserService.getAllUser();
+        res.send(users);
+    });
+    app.post('/users/create', (req, res) => {
+        const user = req.body;
+        User_1.UserService.createUser(user);
+        res.send(user);
+    });
     app.get('/*', (_, res) => {
         res.sendFile(path.join(__dirname, './client/build/index.html'));
     });

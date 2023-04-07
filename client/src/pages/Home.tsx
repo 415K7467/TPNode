@@ -1,29 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
+import '../styles/TitleResearchBar.css';
 
 import MyAnnonces from '../pages/Home/MyAnnonces';
 import Annonces from '../pages/Home/Annonces';
 import Profile from '../pages/Home/Profile';
-import {BrowserRouter, Routes, Route, NavLink} from "react-router-dom";
-
+import UnderHeader from "../components/TitleResearchBar";
 
 const App = () => {
 
+    interface content {
+        content: 'MyAnnonces' | 'Annonces' | 'Profile';
+    }
+
+    const [content, setContent] = useState<content>({content: 'MyAnnonces'});
+
     return (
         <main>
-            <BrowserRouter>
                 <div className="navigation">
                     <h1>Mon application de Todos</h1>
-                    <NavLink to="/myannonces">Mes annonces</NavLink>
-                    <NavLink to="/annonces">Les annonces</NavLink>
-                    <NavLink to="/profile">Profile</NavLink>
+                    <h2 onClick={() => {setContent( {content : 'MyAnnonces'});}}>Mes annonces</h2>
+                    <h2 onClick={() => {setContent( {content : 'Annonces'});}}>Les annonces</h2>
+                    <h2 onClick={() => {setContent( {content : 'Profile'});}}>Profile</h2>
                 </div>
-                <Routes>
-                    <Route path="/myannonces" element={<MyAnnonces/>}/>
-                    <Route path="/annonces" element={<Annonces/>}/>
-                    <Route path="/profile" element={<Profile/>}/>
-                    <Route path="*" element={<div>404</div>}/>
-                </Routes>
-            </BrowserRouter>
+                <div className="content">
+                    {content.content === 'MyAnnonces' && <MyAnnonces/>}
+                    {content.content === 'Annonces' && <Annonces/>}
+                    {content.content === 'Profile' && <Profile/>}
+                </div>
         </main>
     );
 }

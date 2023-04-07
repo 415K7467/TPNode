@@ -1,7 +1,9 @@
+import TitleResearchBar from "../../components/TitleResearchBar";
+
 export default function Annonces() {
     return (
-        <div>
-            <h1>Annonces</h1>
-        </div>
+        <>
+            <TitleResearchBar title="Les annonces"/>
+        </>
     )
 }
