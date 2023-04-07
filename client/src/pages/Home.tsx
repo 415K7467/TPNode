@@ -1,18 +1,10 @@
-export default function Home (){
-    const load = async () => {
-        const data = await window.fetch('/api/hello')
-        const json = await data.json()
-        console.log(json.message)
-    }
+import KwizTitle from "../components/KwizTitle";
 
+export default function Home (){
     return (
         <div className="content">
             <h1>Choix du Kwiz</h1>
-            <ul onLoad={load}>
-                <li>
-                    <h2></h2>
-                </li>
-            </ul>
+            <KwizTitle/>
         </div>
     );
 }
