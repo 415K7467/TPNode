@@ -1,4 +1,4 @@
-export default function Types (){
+export default function Home (){
     const load = async () => {
         const data = await window.fetch('/api/hello')
         const json = await data.json()

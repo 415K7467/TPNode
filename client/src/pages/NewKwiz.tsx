@@ -1,4 +1,4 @@
-export default function Types() {
+export default function NewKwiz() {
     return (
         <div className="content">
             <h1>Types</h1>

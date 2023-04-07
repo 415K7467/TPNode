@@ -2,11 +2,11 @@
   "name": "tpnote",
   "version": "1.0.0",
   "description": "",
-  "main": "server.tsx",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "watch": "nodemon server.js",
+    "start": "node .",
+    "watch": "nodemon .",
     "client": "cd client && npm start",
     "build": "cd client && npm run build"
   },
@@ -18,6 +18,7 @@
     "typescript": "^5.0.3"
   },
   "devDependencies": {
+    "@types/node": "^18.15.11",
     "nodemon": "^2.0.22"
   }
 }
