@@ -64,4 +64,14 @@ code {
 
 }
 
+.content .onClick {
+    background-color: #014554;
+    font-size: 2rem;
+    text-decoration: none;
+    color: aliceblue;
+    margin: 0.75rem;
+    padding: 2rem;
+    border-radius: 3rem;
+}
+
 
